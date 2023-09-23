@@ -1,29 +1,21 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCourse, fetchCourseById } from './courseApi';
 
+
 //GET
 export const fetchAllCourseAsync = createAsyncThunk(
   'course/fetchAllCourse',
   async () => {
     const response = await fetchCourse();
-    const courses = response.data;
-
-    // Store courses in localStorage
-    storeCoursesInLocalStorage(courses);
-
-    return courses;
+    // The value we return becomes the `fulfilled` action payload
+    return response.data;
   }
 );
 
-const storeCoursesInLocalStorage = (courses) => {
-  localStorage.setItem('courses', JSON.stringify(courses));
-};
+
 
 // Function to retrieve courses from localStorage
-const getCoursesFromLocalStorage = () => {
-  const storedCourses = localStorage.getItem('courses');
-  return storedCourses ? JSON.parse(storedCourses) : [];
-};
+
 
 export const fetchAllCourseByIdAsync  = createAsyncThunk(
   'course/fetchProductById',
@@ -39,7 +31,7 @@ export const fetchAllCourseByIdAsync  = createAsyncThunk(
  export const CourseSlice = createSlice({
   name: 'courses',
   initialState:{
-    course: getCoursesFromLocalStorage(),
+    course: [],
     status: 'idle',
   },
   extraReducers: (builder) => {

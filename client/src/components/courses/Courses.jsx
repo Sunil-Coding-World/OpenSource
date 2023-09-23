@@ -46,6 +46,10 @@ const Courses = () => {
     }
   };
   
+  useEffect(() => {
+    dispatch(fetchAllCourseAsync())
+  }, [])
+  
 
 
 
