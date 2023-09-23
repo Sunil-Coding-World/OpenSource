@@ -1,0 +1,73 @@
+@import "color";
+
+mainbox{
+    display: flex;
+        justify-content: center;
+    
+    .mainCourse {   
+        padding: 6rem;
+        width: 70%;
+        word-spacing: 2px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+      
+
+    > div {
+        border-radius: 20px 20px 0 0;
+    background-color: $red;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 2rem;
+    height: 4rem;
+}
+
+> main {
+    padding: 2rem;
+    // align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+
+    }   
+    .enroll {
+        background-color: $red;
+        color: white;
+        border: none;
+        padding: 1rem 1rem;
+        margin: 10px;
+        width: 100%;
+        border-radius: 10px;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: $reddark;
+        }
+    }
+
+}   
+}
+
+
+@media screen and (max-width: 600px) {
+    mainbox{
+        width: 100%;
+        justify-content: center;
+    
+    .mainCourse {   
+        padding: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 85%;
+        word-spacing: 4px;
+
+> main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+
+    }   
+
+}   
+}
+}

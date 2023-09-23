@@ -1,0 +1,223 @@
+@import "color";
+
+$red: rgb(156, 0, 60);
+$reddark: rgb(126, 0, 48);
+
+.Login {
+    display: flex;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: $pink;
+    width: 100%;
+    height: 100vh;
+       
+
+
+
+    > div {
+        text-align: center;
+        margin-top: 2rem;
+        background-color: white;
+        height: 80%;
+        justify-content: center;
+        width: 50% ;
+        border-radius: 20px;
+
+
+        >a{
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+    }
+
+    form {
+        margin-top: 3rem;
+        flex-direction: column;
+        text-align: center;
+        background-color: white;
+        height: 100%;
+        justify-content: center;
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 40%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        p.text-red-500 {
+            color: red;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: $red;
+            margin-top: 0.5rem;
+
+            &:hover {
+                color: $reddark;
+            }
+        }
+
+        button[type="submit"] {
+            margin: 1rem;
+            background-color: $red;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10rem;
+            cursor: pointer;
+            font-size: 10px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $reddark;
+            }
+        }
+    }
+
+    p {
+        font-size: 0.8rem;
+        margin-top: 1rem;
+
+        a {
+            font-weight: bold;
+            color: $red;
+            text-decoration: none;
+            margin-left: 0.2rem;
+
+            &:hover {
+                color: $reddark;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    
+    .Login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $pink;
+        width: 100%;
+        padding: 2rem;
+           
+    
+    
+    
+        > div {
+            text-align: center;
+            margin-top: 2rem;
+            background-color: white;
+            height: 80%;
+            justify-content: center;
+            width: 100% ;
+            border-radius: 20px;
+    
+    
+            >a{
+                font-size: 32px;
+            }
+    
+            h3 {
+                font-size: 2rem;
+                text-transform: uppercase;
+                margin-top: 1rem;
+            }
+        }
+    
+        form {
+            margin-top: 3rem;
+            flex-direction: column;
+            text-align: center;
+            background-color: white;
+            height: 100%;
+            justify-content: center;
+    
+            label {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+    
+            input[type="email"],
+            input[type="password"] {
+                width: 40%;
+                padding: 0.5rem;
+                margin-bottom: 1rem;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            p.text-red-500 {
+                color: red;
+                margin-top: -1rem;
+                margin-bottom: 1rem;
+                font-size: 0.8rem;
+            }
+    
+            a {
+                font-size: 0.8rem;
+                text-decoration: none;
+                color: $red;
+                margin-top: 0.5rem;
+    
+                &:hover {
+                    color: $reddark;
+                }
+            }
+    
+            button[type="submit"] {
+                margin: 1rem;
+                background-color: $red;
+                color: white;
+                border: none;
+                padding: 1rem;
+                border-radius: 10rem;
+                cursor: pointer;
+                font-size: 10px;
+                text-transform: uppercase;
+                transition: background-color 0.3s;
+    
+                &:hover {
+                    background-color: $reddark;
+                }
+            }
+        }
+    
+        p {
+            font-size: 0.8rem;
+            margin-top: 1rem;
+    
+            a {
+                font-weight: bold;
+                color: $red;
+                text-decoration: none;
+                margin-left: 0.2rem;
+    
+                &:hover {
+                    color: $reddark;
+                }
+            }
+        }
+    }
+}

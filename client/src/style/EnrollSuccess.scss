@@ -1,0 +1,86 @@
+@import "color";
+
+.enrollmentSuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $pink;
+
+  .message {
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    button {
+      background-color: $red;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $reddark;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+    .enrollmentSuccess {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $pink;
+        height: 600px;
+      
+        .message {
+          text-align: center;
+      
+          h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+          }
+      
+          p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+          }
+        }
+      
+        a {
+          text-decoration: none;
+      
+          button {
+            background-color: $red;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+      
+            &:hover {
+              background-color: $reddark;
+            }
+          }
+        }
+      }
+  }
