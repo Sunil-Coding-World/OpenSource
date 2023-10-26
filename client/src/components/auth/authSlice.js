@@ -59,6 +59,7 @@ export const logoutUser = createAsyncThunk(
       .addCase(createUserAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.loggedInUser = action.payload;
+        state.loggedInUser = null;
       })
       .addCase(checkUserAsync.pending, (state) => {
         state.status = 'loading';
@@ -68,6 +69,7 @@ export const logoutUser = createAsyncThunk(
         state.loggedInUser = action.payload;
         state.userChecked = true;
         localStorage.setItem('user', JSON.stringify(action.payload));
+        
 
       })
       .addCase(checkUserAsync.rejected, (state, action) => {

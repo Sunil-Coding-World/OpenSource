@@ -20,7 +20,6 @@ export default function Signup() {
 
   return (
     <>
-      {/* {user && <Navigate to="/" replace={true}></Navigate>} */}
           <div className="Signup">
         <div>
           <a href="/signup">

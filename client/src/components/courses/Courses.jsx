@@ -33,7 +33,7 @@ const Courses = () => {
       // If enrollment is successful, display a success toast
       toast.success('Course enrolled successfully', {
         position: toast.POSITION.TOP_RIGHT,
-      });
+      })
   
       // Optionally, you can navigate the user to a success page
       // Navigate("/success")

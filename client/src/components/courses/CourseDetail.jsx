@@ -78,7 +78,7 @@ import { fetchCourseById } from "./courseApi";
             </button>
           )}
         </main>
-        <button className="enroll">Enroll Now</button>
+        <button className="enroll">Go back to Enroll</button>
       </div>
     </mainbox>
   );

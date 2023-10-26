@@ -53,7 +53,7 @@ export const createUser = async (req, res, next) => {
     if (!email || !password) {
       return res.status(400).json({
         success: false,
-        error: "Please provide email, password, and role",
+        error: "Please provide email, password",
       });
     }
 
@@ -61,8 +61,6 @@ export const createUser = async (req, res, next) => {
       email,
       password,
     });
-    console.log("Received user data:", req.body);
-
 
     res.status(201).json({
       success: true,
