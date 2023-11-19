@@ -1,24 +1,24 @@
-import { Link, Navigate, useParams } from "react-router-dom"
-import { useForm } from "react-hook-form"
-import { IoBookOutline } from "react-icons/io5"
-import { useDispatch, useSelector } from "react-redux"
-import { checkUserAsync, selectLoggedInuser, selecterror } from "./authSlice"
-import { useEffect } from "react"
+import { Link, Navigate, useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { IoBookOutline } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { checkUserAsync, selectLoggedInuser } from "./authSlice";
+import { useEffect } from "react";
 
 export default function Login() {
   const { id } = useParams();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const user = useSelector(selectLoggedInuser);
-  
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   return (
     <>
-      {user && <Navigate to="/" replace={true}> </Navigate>}
+      {user && <Navigate to="/" replace={true}></Navigate>}
       <div className="Login">
         <div>
           <a href="/login">
@@ -30,23 +30,26 @@ export default function Login() {
             <form
               onSubmit={handleSubmit((data) => {
                 dispatch(
-                  checkUserAsync({ email: data.email, password: data.password })
-                )
-                console.log(data)
+                  checkUserAsync({
+                    email: data.email,
+                    password: data.password,
+                  })
+                );
+                console.log(data);
               })}
             >
               <div>
-                <label htmlFor="email"></label>
+                <label htmlFor="email">Email</label>
                 <div>
                   <input
                     id="email"
                     placeholder="Enter Your Email"
                     autoComplete="off"
                     {...register("email", {
-                      required: "email is required",
+                      required: "Email is required",
                       pattern: {
                         value: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi,
-                        message: "email not valid",
+                        message: "Email not valid",
                       },
                     })}
                     type="email"
@@ -59,7 +62,7 @@ export default function Login() {
 
               <div>
                 <div>
-                  <label htmlFor="password"></label>
+                  <label htmlFor="password">Password</label>
                 </div>
                 <div>
                   <input
@@ -67,10 +70,17 @@ export default function Login() {
                     placeholder="Password"
                     autoComplete="off"
                     {...register("password", {
-                      required: "password is required",
+                      required: "Password is required",
+                      minLength: {
+                        value: 6,
+                        message: "Password must be at least 6 characters long",
+                      },
                     })}
                     type="password"
                   />
+                  {errors.password && (
+                    <p className="text-red-500">{errors.password.message}</p>
+                  )}
                 </div>
                 <div>
                   <Link to="/forgot-password">Forgot password?</Link>
@@ -83,12 +93,11 @@ export default function Login() {
             </form>
 
             <p>
-              Not a member?
-              <Link to="/signup">Create an Account</Link>
+              Not a member? <Link to="/signup">Create an Account</Link>
             </p>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

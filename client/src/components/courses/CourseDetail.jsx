@@ -14,7 +14,7 @@ import { fetchCourseById } from "./courseApi";
       // Define an async function to fetch the course data by ID
       const fetchCourseById = async () => {
         try {
-          const response = await fetch(`http://localhost:8000/course/${id}`);
+          const response = await fetch(`https://opensource-server.vercel.app/course/${id}`);
   
           if (!response.ok) {
             throw new Error("Network response was not ok");
