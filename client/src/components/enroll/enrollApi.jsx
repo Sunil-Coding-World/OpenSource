@@ -1,6 +1,6 @@
 export async function AddtoEnroll(item) {
   try {
-    const response = await fetch('http://localhost:8000/enroll', {
+    const response = await fetch('https://opensource-server-8rg2ihsf6-sunil-dondeys-projects.vercel.app/enroll', {
       method: "POST",
       body: JSON.stringify(item),
       headers: { 'content-type': 'application/json' },
@@ -15,7 +15,7 @@ export async function AddtoEnroll(item) {
 
 export async function fetchItemsByUserId(userId) {
   try {
-    const response = await fetch(`http://localhost:8000/enroll/${userId}`);
+    const response = await fetch(`https://opensource-server-8rg2ihsf6-sunil-dondeys-projects.vercel.app/enroll/${userId}`);
     const data = await response.json();
     return { data };
   } catch (error) {
@@ -27,7 +27,7 @@ export async function fetchItemsByUserId(userId) {
 
 export async function deleteItemFromEnroll(userId,courseId) {
   try {
-    const response = await fetch(`http://localhost:8000/enroll/${userId}/${courseId}`,
+    const response = await fetch(`https://opensource-server-8rg2ihsf6-sunil-dondeys-projects.vercel.app/enroll/${userId}/${courseId}`,
       {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' },
