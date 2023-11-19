@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
-MONGO_URI ="mongodb+srv://dondeysunil:OpenSource@cluster0.solshcr.mongodb.net/?retryWrites=true&w=majority"
 export const connectDB = async () => {
-    await mongoose.connect(MONGO_URI, {
+    await mongoose.connect("mongodb+srv://dondeysunil:OpenSource@cluster0.solshcr.mongodb.net/?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
