@@ -33,7 +33,7 @@ import Protected from './components/auth/Protected';
   [ 
    { 
      path: "/", 
-     element: <Protected><HomePage /></Protected> , 
+     element: <HomePage />, 
    }, 
    { 
      path: "/courses", 
